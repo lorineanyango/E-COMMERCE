@@ -4,6 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import {connectDB} from './config/db.mjs';
 import userRoutes from './routes/userRoutes.mjs';
+import categoryRoutes from './routes/categoryRoute.mjs';
 
 dotenv.config();
 connectDB();
@@ -15,6 +16,7 @@ app.use(express.json());// allowa the server to send json data to the client sid
 const PORT = process.env.PORT || 5000;
 app.use(express.urlencoded({extended: true})); //a middleware topass form data
 app.use("/api/users", userRoutes);
+app.use("/api/categorys", categoryRoutes);
 
 app.get('/', (req, res)=>{
   res.send('hello world');
