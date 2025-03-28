@@ -16,6 +16,9 @@ import Profile from './pages/user/Profile.jsx';
 import AdminRoute from './pages/admin/AdminRoute.jsx';
 import UserList from './pages/admin/UserList.jsx';
 import CategoryList from './pages/admin/CategoryList.jsx';
+import ProductList from './pages/admin/ProductList.jsx';
+import ProductUpdate from './pages/admin/ProductUpdate.jsx';
+import AllProducts from './pages/admin/AllProducts.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +33,11 @@ const router = createBrowserRouter(
 
   <Route path="/admin"element={<AdminRoute/>}>
     <Route path='userlist' element={<UserList/>}/>
-    <Route path='/categoryList' element={<CategoryList />}/>
+    <Route path='categorylist' element={<CategoryList />}/>
+    {/* just to remind myself that itshould be below (/:pageNumber) */}
+    <Route path='productlist' element={<ProductList />}/>  
+    <Route path='allproductslist' element={<AllProducts />}/>
+    <Route path='product/update/:_id' element={<ProductUpdate />}/>
   </Route>
 
   </Route>)

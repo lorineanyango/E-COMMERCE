@@ -7,6 +7,7 @@ import {
 import { toast } from "react-toastify"
 import CategoryForm from "../../components/CategoryForm";
 import Modal from "../../components/Modal";
+import AdminMenu from "./AdminMenu";
 
 const CategoryList = () => {
   const {data: categories} =  useFetchCategoriesQuery();
@@ -91,12 +92,14 @@ const CategoryList = () => {
 
 
    return (
-    <div className="md:w-3/4 p-3">
-      <div className="h-12">
+    <div className="ml-[10rem] flex flex-col md:flex-row">
+      <AdminMenu />
+      <div className="md:w-3/4 p-3">
+        <div className="h-12">
         <CategoryForm value={name} setValue={setName} handleSubmit={handleCreateCategory}/>
-        <br />
-        <hr />
-        <div className="flex flex-wrap">
+         <br />
+         <hr />
+         <div className="flex flex-wrap">
           {categories?.map((category)=>(
             <div key={category._id}>
               <button className="bg-white border border-blue-500 text-blue-500 py-2 px-4 rounded-lg m-3
@@ -119,6 +122,7 @@ const CategoryList = () => {
       </div>
       
     </div>
+  </div>
   )
 }
 
