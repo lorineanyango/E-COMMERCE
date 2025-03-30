@@ -22,7 +22,7 @@ router.put('/:id', authenticate, authorizeAdmin, formidable(), updateProductDeta
 router.delete('/:id', authenticate,authorizeAdmin, removeproduct)
 router.get('/', fetchProducts)
 router.get('/allproducts', fetchAllProducts)
-router.post('/:id/reviews' ,authenticate, authorizeAdmin,checkId, addProductReview)
+router.post('/:id/reviews' ,authenticate,checkId, addProductReview)
 router.get('/top', fetchTopProducts)
 router.get('/new', fetchNewProducts)
 router.get('/:id', fetchProductById)
